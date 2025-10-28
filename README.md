@@ -90,14 +90,14 @@ Requires **Node.js v18.17+**.
 ### 💬 About Me
 
 I’m **Anarv Vasavada** — engineer, researcher, and builder.  
-I create systems that merge design, logic, and autonomy — engineered from curiosity, refined by control.
+I create systems that merge design, logic, and autonomy engineered from curiosity, refined by control.
 
 > This portfolio isn’t decoration. It’s proof of thought.
 
 ## 📜 License
 
 This project is open-sourced under the **MIT License**.  
-You are free to use, modify, and distribute this project — personally or commercially — as long as proper credit is given to the original author.
+You are free to use, modify, and distribute this project personally or commercially as long as proper credit is given to the original author.
 
 By using or adapting this project, you agree that:
 - The code and design are provided **“as is”**, without any warranty or guarantee of performance.
@@ -105,6 +105,6 @@ By using or adapting this project, you agree that:
 - You may customize, build upon, or reference this project **as long as attribution remains intact**.
 
 If you use this project as a base for your own work, a link back to  
-[anarvvasavada.vercel.app](https://anarvvasavada.vercel.app) or this repository is appreciated — it keeps the cycle of inspiration and credit alive.
+[anarvvasavada.vercel.app](https://anarvvasavada.vercel.app) or this repository is appreciated it keeps the cycle of inspiration and credit alive.
 
 For the full legal text, see the [`LICENSE`](./LICENSE) file.
