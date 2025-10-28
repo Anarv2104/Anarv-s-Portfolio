@@ -5,7 +5,7 @@ It’s not just a showcase, it’s a reflection of how I think, build, and evolv
 
 View the live site → [anarvvasavada.vercel.app](https://anarvvasavada.vercel.app)
 
-![Portfolio Preview](public/images/og/home.jpg)
+![Portfolio Preview](/public/images/og/home.jpg)
 
 ---
 
