@@ -1,91 +1,110 @@
-# Magic Portfolio
+# Anarv Vasavada — Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+This is my personal **portfolio**, designed, developed, and refined from scratch.  
+It’s not just a showcase, it’s a reflection of how I think, build, and evolve as an engineer.
 
-View the demo [here](https://demo.magic-portfolio.com).
+View the live site → [anarvvasavada.vercel.app](https://anarvvasavada.vercel.app)
 
-![Magic Portfolio](public/images/og/home.jpg)
+![Portfolio Preview](public/images/og/home.jpg)
 
-## Getting started
+---
+
+## 🧠 Overview
+
+This portfolio represents **my work, mindset, and process**.  
+Every detail — from motion to layout — is engineered with purpose.  
+It includes my **projects, research, writing, and experience**, built around clean architecture and obsessive precision.
+
+Built with **Next.js**, **Once UI**, and a custom configuration designed for clarity, scalability, and performance.
+
+---
+
+## 🚀 Getting Started
+
+If you’d like to run or modify this portfolio locally:
 
 **1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+```bash
+git clone https://github.com/Anarv2104/Anarv-s-Portfolio.git
 ```
 
 **2. Install dependencies**
-```
+```bash
 npm install
 ```
 
 **3. Run dev server**
-```
+```bash
 npm run dev
 ```
 
-**4. Edit config**
-```
+**4. Edit configuration**
+```bash
 src/resources/once-ui.config.js
 ```
 
-**5. Edit content**
-```
+**5. Update content**
+```bash
 src/resources/content.js
 ```
 
-**6. Create blog posts / projects**
+**6. Add new sections (projects, blogs, work)**
+```bash
+Add new .mdx files in src/app/blog/posts or src/app/work/projects
 ```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+Requires **Node.js v18.17+**.
 
-## Documentation
+---
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+## 🧩 Features
 
-## Features
+### 🧱 Design & Engineering
+- Responsive layout built for all screen sizes  
+- Minimal, timeless design focused on clarity over clutter  
+- Modular structure for easy scaling and updates  
+- Built with Once UI’s design tokens and components  
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+### 🧠 Content System
+- MDX-based architecture for posts, projects, and case studies  
+- Dynamic rendering based on content configuration  
+- Auto-generated metadata, open-graph tags, and social previews  
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+### 🌍 SEO & Accessibility
+- Automatic OG image and schema generation  
+- Accessible, performance-optimized layout with Next/OG  
 
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+### ⚙️ Customization
+- Full control via config files (no code duplication)  
+- Easily toggle blog, projects, or about sections  
 
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+---
 
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+## 🧰 Tech Stack
+- **Framework:** Next.js 14+  
+- **Language:** JavaScript / MDX  
+- **Deployment:** Vercel  
 
-## Creators
+---
 
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
+### 💬 About Me
 
-## Get involved
+I’m **Anarv Vasavada** — engineer, researcher, and builder.  
+I create systems that merge design, logic, and autonomy — engineered from curiosity, refined by control.
 
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
+> This portfolio isn’t decoration. It’s proof of thought.
 
-## License
+## 📜 License
 
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
+This project is open-sourced under the **MIT License**.  
+You are free to use, modify, and distribute this project — personally or commercially — as long as proper credit is given to the original author.
 
-See `LICENSE.txt` for more information.
+By using or adapting this project, you agree that:
+- The code and design are provided **“as is”**, without any warranty or guarantee of performance.
+- The author (Anarv Vasavada) holds **no liability** for any issues or damages arising from its use.
+- You may customize, build upon, or reference this project **as long as attribution remains intact**.
 
-## Deploy with Vercel
+If you use this project as a base for your own work, a link back to  
+[anarvvasavada.vercel.app](https://anarvvasavada.vercel.app) or this repository is appreciated — it keeps the cycle of inspiration and credit alive.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+For the full legal text, see the [`LICENSE`](./LICENSE) file.
