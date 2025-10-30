@@ -1,0 +1,133 @@
+---
+title: "LLMs Are Poor Strategists: What It'll Take to Build AI That Actually Plans"
+summary: "Large Language Models excel at tactics but fail at strategy. Here's what's missing from current AI planning capabilities."
+publishedAt: "2024-09-30"
+tag: "AI Architecture"
+---
+
+LLMs can *imitate* planners.  
+But they’re terrible at *actually* planning.
+
+They can generate an outline.  
+They can mimic a checklist.  
+They can replay what looks like structure.
+
+But give them a hard problem with moving parts, dynamic goals, time dependencies, and failure points—  
+they hallucinate confidence and hope for the best.
+
+---
+
+## Why LLMs Sound Smart But Aren’t Strategic
+
+Planning requires more than “knowing stuff.”  
+It requires **foresight**.
+
+Real planning means:
+- Anticipating resource constraints  
+- Managing partial knowledge  
+- Breaking goals into sequenced, causal subtasks  
+- Monitoring progress and dynamically adjusting based on feedback
+
+LLMs don’t do any of that.  
+They just predict the most likely next word.
+
+There’s no internal simulation.  
+No goal-hierarchy awareness.  
+No plan-execute-reflect loop.
+
+They aren’t strategists. They’re **statistical storytellers**.
+
+---
+
+## Autocomplete ≠ Agency
+
+If you ask an LLM:
+> “How should I build an AI startup?”
+
+You’ll get something that looks like a plan:
+- Step 1: Ideate  
+- Step 2: Validate  
+- Step 3: Build MVP  
+- Step 4: Launch  
+- Step 5: Raise funding
+
+But ask it to:
+- Weigh trade-offs between different GTM strategies  
+- Decide when to pivot based on early feedback  
+- Simulate market response to pricing changes  
+- Or create 4 backup plans in case Step 2 fails
+
+And you’ll see the cracks.
+
+That’s because LLMs can’t simulate long-term impact across branches.  
+They can’t evaluate plan *coherence* over time.  
+They don’t self-monitor during execution.
+
+They *recite* plans. They don’t **own** them.
+
+---
+
+## What Real Planning Requires
+
+To build AI that actually plans, we need systems that can:
+
+### 1. Simulate
+Agents should be able to run “what-if” scenarios before taking action.  
+Planning is a **simulated failure loop**—the more internally an agent can test a path, the better it will navigate the real world.
+
+### 2. Ground in Constraints
+Plans aren’t just linear.  
+They depend on:
+- Time budgets  
+- Resource limits  
+- External uncertainties  
+- Inter-agent coordination
+
+A real planning AI needs **environmental awareness**, not just token probabilities.
+
+### 3. Reflect and Replan
+Every smart planner *monitors themselves*.  
+If the plan isn’t working, they stop, debug, and revise.  
+LLMs, by default, just keep generating.
+
+A true strategic agent must be able to **detect drift**, revise its strategy, and resume—all autonomously.
+
+---
+
+## Multi-Agent Collaboration Is the Next Leap
+
+One way forward is to **split cognition across agents**:
+- A Planner agent simulates and proposes long-term strategies  
+- An Executor agent handles task-by-task operations  
+- A Monitor agent checks for drift and replans as needed
+
+You build **teams**, not prompts.  
+And you orchestrate reasoning, not text generation.
+
+This gives rise to real-time **negotiation**, **debate**, and **reasoning under conflict**—things no single LLM can do in isolation.
+
+---
+
+## Planning Is a Process, Not a Prompt
+
+If you want real AI planning:
+- You need memory  
+- You need multi-step reasoning  
+- You need constraint checking  
+- You need simulation  
+- And you need reflection
+
+The next wave of agents won’t be LLMs with better prompts—  
+They’ll be **systems** that think, test, break, rebuild, and persist.
+
+Planning is not a paragraph.  
+It’s a **lifelong loop** of trial, error, and adaptation.
+
+And until we stop expecting “text completion” to be the same thing as strategy—  
+We won’t get the AI collaborators we actually need.
+
+---
+
+<blockquote>
+This is part of my ongoing series on designing agentic infrastructure and collaborative AI systems that move beyond token prediction into strategic, autonomous execution. Follow for more.
+</blockquote>

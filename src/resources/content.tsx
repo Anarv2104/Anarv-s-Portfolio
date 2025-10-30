@@ -33,9 +33,14 @@ const social: Social = [
     link: "https://www.linkedin.com/in/anarvvasavada/",
   },
   {
-    name: "twitter",
+    name: "Twitter / X",
     icon: "twitter",
     link: "https://x.com/AnarvVasavada",
+  },
+  {
+    name: "Medium",
+    icon: "medium",
+    link: "https://medium.com/@anarv_vasavada",
   },
   {
     name: "Email",
@@ -86,7 +91,7 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://drive.google.com/file/d/12f1RQPgw5dJixSjh5jPlmOauOlxXeTcb/view?usp=drive_link",
   },
   intro: {
     display: true,
@@ -95,52 +100,87 @@ const about: About = {
       <>
         Anarv Vasavada is an engineer who sees building as a way of thinking.
 He learns by questioning, creates by understanding, and builds systems that make sense of complexity. His work reflects curiosity, structure, and a constant need to turn ideas into something real.
+<br /><br />
+<br />These experiences aren’t about buzzwords they’re proof I can lead, build, and ship real shit that works.<br />
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Technical Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "VisionX",
+        timeframe: "2023 – 2024",
+        role: "Full Stack Developer | Team Lead",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led a 4-member team to develop a GitHub-integrated collaboration platform with token-based reward tracking,
+            increasing developer engagement by approximately 60 percent.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Architected automated PR validation via webhooks and smart contract tracking, reducing manual review effort by
+            about 45 percent and improving process transparency.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/projects/project-01/screenshot1.jpg", // Replace with your image
+            alt: "VisionX Project Screenshot",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Octopus",
+        timeframe: "2025",
+        role: "AI Engineer | Team Lead",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Built a multi-agent orchestration system integrating Slack, Notion, GitHub, Gmail, and Sheets using FastAPI and
+            LangChain, reducing manual workflows by 65 percent.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Modular agent pods designed with shared vector memory and distributed reasoning, doubling automation speed
+            and ensuring full traceability.
+          </>,
+          <>
+            Developed reusable AI agent templates that standardized reasoning and minimized context switch latency by
+            45 percent.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/projects/project-01/screenshot2.jpg", // Replace with your image
+            alt: "Octopus Project Screenshot",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "De-MAPP",
+        timeframe: "2025",
+        role: "AI / Full Stack Developer",
+        achievements: [
+          <>
+            Engineered a blockchain-powered protocol enabling persistent AI agent memory and interoperability using
+            Avalanche and IPFS, improving context retrieval speed by 50 percent.
+          </>,
+          <>
+            Designed the MCX protocol and the API of the plugin to enable decentralized communication across agents,
+            achieving 100 percent verifiable integrity with 40 percent fewer data-loss incidents.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/screenshot3.jpg", // Replace with your image
+            alt: "De-MAPP Project Screenshot",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
@@ -149,83 +189,168 @@ He learns by questioning, creates by understanding, and builds systems that make
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Parul University",
+        description: <>Studied Computer Science and Engineering.</>,
       },
     ],
   },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
-      {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },  
-    ],
-  },
-};
+certifications: {
+  display: true, // set to false to hide this section
+  title: "Certifications",
+  institutions: [
+    {
+      name: "Certified Apple Teacher",
+      description: <>Credentialed by Apple for proficiency in teaching and developing using Apple tools and platforms.</>,
+    },
+    {
+      name: "NPTEL Computer Networks – IIT Kharagpur",
+      description: <>Completed a full-term course on Computer Networks under IIT Kharagpur via NPTEL, with rigorous evaluation and assignments.</>,
+    },
+    {
+      name: "iOS App Development with Swift",
+      description: <>Trained in Swift and Xcode with hands-on iOS app development, UI building, and Apple ecosystem integration.</>,
+    },
+    {
+      name: "Google Startup School",
+      description: <>Participated in Google’s Startup School program, gaining exposure to product building, startup growth, and founder-first frameworks.</>,
+    },
+  ],
+},
+technical: {
+  display: true, // set to false to hide this section
+  title: "Technical Skills",
+  skills: [
+    {
+      title: "Multi-Agent Systems",
+      description: (
+        <>Architecting modular multi-agent workflows with dynamic orchestration, memory sharing, and cross-pod collaboration.</>
+      ),
+      tags: [
+        { name: "LangChain", icon: "langchain" },
+        { name: "FastAPI", icon: "fastapi" },
+        { name: "Docker", icon: "docker" },
+      ],
+      images: [
+        {
+          src: "/images/projects/project-01/cover-05.jpg",
+          alt: "Multi-Agent Orchestration",
+          width: 16,
+          height: 9,
+        },
+      ],
+    },
+    {
+      title: "Backend Systems",
+      description: (
+        <><>APIs that sync, stream, and scale. From Redis queues to OAuth flows, I handle the messy backend logic that makes products work.</></>
+      ),
+      tags: [
+        { name: "FastAPI", icon: "fastapi" },
+        { name: "Node.js", icon: "nodejs" },
+        { name: "Redis", icon: "redis" },
+        { name: "MongoDB", icon: "database" },
+        { name: "JWT", icon: "lock" },
+        { name: "WebSockets", icon: "activity" },
+        { name: "Render", icon: "cloud" }
+      ],
+      images: [],
+    },
+    {
+      title: "AI + NLP Integration",
+      description: (
+        <>Integrating LLMs, vector DBs, and custom memory layers to enable persistent AI reasoning and tool use.</>
+      ),
+      tags: [
+        { name: "Python", icon: "python" },
+        { name: "ChromaDB", icon: "database" },
+        { name: "LangChain", icon: "langchain" },
+      ],
+      images: [
+        {
+          src: "/images/projects/project-01/cover-07.jpg",
+          alt: "LLM + Memory Stack",
+          width: 16,
+          height: 9,
+        },
+      ],
+    },
+    {
+      title: "Frontend & Dashboards",
+      description: (
+        <>Built futuristic UIs with Next.js, React, Tailwind, and animation libraries like GSAP and Lenis.</>
+      ),
+      tags: [
+        { name: "React", icon: "react" },
+        { name: "Next.js", icon: "nextjs" },
+        { name: "Tailwind", icon: "tailwind" },
+        { name: "HTML", icon: "html" },
+        { name: "CSS", icon: "css" },
+        { name: "Bootstrap", icon: "bootstrap" },
+        { name: "Chart.js", icon: "chartjs" },
+        { name: "Recharts", icon: "recharts" },
+      ],
+      images: [
+        {
+          src: "/images/projects/project-01/cover-08.jpg",
+          alt: "VisionX UI",
+          width: 16,
+          height: 9,
+        },
+      ],
+    },
+    {
+      title: "Full Stack Development",
+      description: (
+        <>Building full-stack applications with dynamic UIs, secure APIs, real-time databases, and production-ready deployments.</>
+      ),
+      tags: [
+        { name: "React", icon: "react" },
+        { name: "Next.js", icon: "nextjs" },
+        { name: "FastAPI", icon: "fastapi" },
+        { name: "Supabase", icon: "supabase" },
+        { name: "Vercel", icon: "cloud" },
+        { name: "Docker", icon: "docker"},
+        {name: "mongodb", icon: "mongodb" }
 
+      ],
+      images: [
+        {
+          src: "/images/projects/project-01/cover-09.jpg",
+          alt: "Full Stack Architecture",
+          width: 16,
+          height: 9,
+        },
+      ],
+    },
+    {
+      title: "Programming Languages",
+      description: (
+        <>Fluent in multiple languages across domains — from backend logic to AI pipelines and system design.</>
+      ),
+      tags: [
+        { name: "Python", icon: "python" },
+        { name: "Java", icon: "java" },
+        { name: "JavaScript", icon: "javascript" },
+        { name: "TypeScript", icon: "typescript" },
+        { name: "C", icon: "c" } 
+      ],
+      images: [
+        {
+          src: "/images/projects/project-01/cover-10.jpg",
+          alt: "Programming Languages Overview",
+          width: 16,
+          height: 9,
+        },
+      ],
+    },
+  ],
+},
+};
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Blogs - Anarv Vasavada",
+  heading: "Read This If You've Got a Spine.",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route

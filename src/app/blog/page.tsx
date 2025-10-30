@@ -30,7 +30,7 @@ export default function Blog() {
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
-        {blog.title}
+        {blog.heading || blog.title}
       </Heading>
       <Column fillWidth flex={1} gap="40">
         <Posts range={[1, 1]} thumbnail />
@@ -39,7 +39,7 @@ export default function Blog() {
         <Heading as="h2" variant="heading-strong-xl" marginLeft="l">
           Earlier posts
         </Heading>
-        <Posts range={[4]} columns="2" />
+        <Posts range={[4, 13]} columns="2" />
       </Column>
     </Column>
   );

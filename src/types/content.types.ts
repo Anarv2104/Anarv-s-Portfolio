@@ -179,6 +179,20 @@ export interface About extends BasePageConfig {
       description: React.ReactNode;
     }>;
   };
+  /** Certifications section */
+  certifications: {
+    /** Whether to display certifications section */
+    display: boolean;
+    /** Title for the certifications section */
+    title: string;
+    /** List of certifications */
+    institutions: Array<{
+      /** Certification name */
+      name: string;
+      /** Description of certification */
+      description: React.ReactNode;
+    }>;
+  };
   /** Technical skills section */
   technical: {
     /** Whether to display technical skills section */
@@ -215,7 +229,10 @@ export interface About extends BasePageConfig {
  * Blog page configuration.
  * @description Configuration for the Blog page, including metadata and navigation label.
  */
-export interface Blog extends BasePageConfig {}
+export interface Blog extends BasePageConfig {
+  /** Optional heading to display on the page (if different from title) */
+  heading?: string;
+}
 
 /**
  * Work/projects page configuration.

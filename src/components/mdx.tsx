@@ -1,5 +1,5 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
-import React, { ReactNode } from "react";
+import React, { ReactNode, Children } from "react";
 import { slugify as transliterate } from "transliteration";
 
 import {
@@ -77,8 +77,49 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
   );
 }
 
-function slugify(str: string): string {
-  const strWithAnd = str.replace(/&/g, " and "); // Replace & with 'and'
+function extractTextFromChildren(children: ReactNode): string {
+  if (typeof children === 'string') {
+    return children;
+  }
+  
+  if (typeof children === 'number') {
+    return children.toString();
+  }
+  
+  if (React.isValidElement(children)) {
+    const props = children.props as any; // Safe cast since we're handling the error case
+    return extractTextFromChildren(props?.children);
+  }
+  
+  if (Array.isArray(children)) {
+    return children.map(extractTextFromChildren).join('');
+  }
+  
+  return '';
+}
+
+function slugify(input: any): string {
+  let textContent = '';
+  
+  try {
+    // Try to extract text content from React children
+    textContent = extractTextFromChildren(input);
+    
+    // Fallback to string conversion if extraction fails
+    if (!textContent && input) {
+      textContent = String(input);
+    }
+  } catch (error) {
+    // Last resort: convert to string safely
+    textContent = input?.toString?.() || String(input || '');
+  }
+  
+  // If we still don't have valid text, return empty string
+  if (!textContent || typeof textContent !== 'string') {
+    return '';
+  }
+  
+  const strWithAnd = textContent.replace(/&/g, " and "); // Replace & with 'and'
   return transliterate(strWithAnd, {
     lowercase: true,
     separator: "-", // Replace spaces with -

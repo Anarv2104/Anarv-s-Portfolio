@@ -45,6 +45,11 @@ export default function About() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
+      title: about.certifications.title,
+      display: about.certifications.display,
+      items: about.certifications.institutions.map((institution) => institution.name),
+    },
+    {
       title: about.technical.title,
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
@@ -132,8 +137,8 @@ export default function About() {
                   backdropFilter: "blur(var(--static-space-1))",
                 }}
               >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Icon paddingLeft="12" name="document" onBackground="brand-weak" />
+                <Row paddingX="8">Download Resume</Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -266,6 +271,26 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
+                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
+                    <Text id={institution.name} variant="heading-strong-l">
+                      {institution.name}
+                    </Text>
+                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                      {institution.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.certifications.display && (
+            <>
+              <Heading as="h2" id={about.certifications.title} variant="display-strong-s" marginBottom="m">
+                {about.certifications.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.certifications.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
