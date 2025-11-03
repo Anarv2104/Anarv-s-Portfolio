@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { OptimizedImage } from "@/components";
 
 interface ProjectCardProps {
   href: string;

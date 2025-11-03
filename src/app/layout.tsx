@@ -14,6 +14,9 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers, WebVitals } from "@/components";
+import ImagePreloader from "@/components/ImagePreloader";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 import { Metadata } from "next";
 
@@ -46,6 +49,19 @@ export default async function RootLayout({
       )}
     >
       <head>
+        {/* DNS prefetch for faster external resource loading */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="//images.unsplash.com" />
+        
+        {/* Preconnect for critical external resources */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        
+        {/* Critical resource hints */}
+        <link rel="preload" href="/images/avatar.jpg" as="image" type="image/jpeg" />
+        <link rel="prefetch" href="/images/teammates/prayers.jpg" as="image" />
+        <link rel="prefetch" href="/images/teammates/priyank.jpg" as="image" />
+        
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
@@ -165,6 +181,16 @@ export default async function RootLayout({
           </Flex>
           <Footer />
           <WebVitals />
+          <ImagePreloader
+            images={[
+              '/images/avatar.jpg',
+              '/images/teammates/prayers.jpg',
+              '/images/teammates/priyank.jpg',
+            ]}
+            priority={true}
+          />
+          <PerformanceOptimizer />
+          <ServiceWorkerRegistration />
         </Column>
       </Providers>
     </Flex>

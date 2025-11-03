@@ -11,3 +11,7 @@ export { CustomMDX } from "@/components/mdx";
 export { default as LazyLoad } from "@/components/LazyLoad";
 export { default as OptimizedImage } from "@/components/OptimizedImage";
 export { default as WebVitals } from "@/components/WebVitals";
+export { default as ImagePreloader } from "@/components/ImagePreloader";
+export { default as LazyImage } from "@/components/LazyImage";
+export { default as ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+export { default as PerformanceOptimizer } from "@/components/PerformanceOptimizer";
