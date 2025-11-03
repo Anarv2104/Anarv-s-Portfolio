@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://anarv-portfolio.vercel.app/sitemap.xml
+
+# Disallow unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /out/
+Disallow: /.well-known/

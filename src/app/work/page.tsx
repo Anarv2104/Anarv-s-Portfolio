@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema, SmartLink, Text, Flex } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 
@@ -32,6 +32,28 @@ export default function Work() {
         {work.title}
       </Heading>
       <Projects />
+      <Flex 
+        fillWidth 
+        paddingX="l" 
+        marginTop="xl"
+        style={{ justifyContent: "center" }}
+      >
+        <SmartLink
+          prefixIcon="document"
+          suffixIcon="arrowRight"
+          style={{ 
+            padding: "12px 24px",
+            borderRadius: "24px",
+            width: "fit-content",
+            border: "1px solid var(--brand-alpha-medium)",
+            backgroundColor: "var(--brand-alpha-weak)",
+            backdropFilter: "blur(var(--static-space-1))"
+          }}
+          href="https://github.com/Anarv2104"
+        >
+          <Text variant="body-default-m">View all Projects</Text>
+        </SmartLink>
+      </Flex>
     </Column>
   );
 }

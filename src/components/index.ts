@@ -8,3 +8,6 @@ export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
+export { default as LazyLoad } from "@/components/LazyLoad";
+export { default as OptimizedImage } from "@/components/OptimizedImage";
+export { default as WebVitals } from "@/components/WebVitals";

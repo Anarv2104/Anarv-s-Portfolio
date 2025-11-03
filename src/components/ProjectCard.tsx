@@ -30,6 +30,62 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
 }) => {
+  // Render horizontal card for projects without images
+  if (!images || images.length === 0) {
+    return (
+      <Column 
+        fillWidth 
+        border="neutral-medium" 
+        background="neutral-weak"
+        radius="l"
+        padding="l"
+        gap="m"
+        style={{
+          borderRadius: "16px",
+        }}
+      >
+        <Flex fillWidth direction="row" gap="l" align="center">
+          <Column flex={1} gap="12">
+            {title && (
+              <Heading as="h2" wrap="balance" variant="heading-strong-l">
+                {title}
+              </Heading>
+            )}
+            {description?.trim() && (
+              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+                {description}
+              </Text>
+            )}
+          </Column>
+          <Column gap="12" align="end">
+            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
+            <Flex gap="16" wrap>
+              {content?.trim() && (
+                <SmartLink
+                  suffixIcon="arrowRight"
+                  style={{ margin: "0", width: "fit-content" }}
+                  href={href}
+                >
+                  <Text variant="body-default-s">Inspect build logs →</Text>
+                </SmartLink>
+              )}
+              {link && (
+                <SmartLink
+                  suffixIcon="arrowUpRightFromSquare"
+                  style={{ margin: "0", width: "fit-content" }}
+                  href={link}
+                >
+                  <Text variant="body-default-s">View project</Text>
+                </SmartLink>
+              )}
+            </Flex>
+          </Column>
+        </Flex>
+      </Column>
+    );
+  }
+
+  // Original vertical card layout for projects with images
   return (
     <Column fillWidth gap="m">
       <Carousel
@@ -69,7 +125,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">Inspect build logs →</Text>
                 </SmartLink>
               )}
               {link && (

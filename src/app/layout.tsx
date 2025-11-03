@@ -13,7 +13,7 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
+import { Footer, Header, RouteGuard, Providers, WebVitals } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 import { Metadata } from "next";
 
@@ -164,6 +164,7 @@ export default async function RootLayout({
             </Flex>
           </Flex>
           <Footer />
+          <WebVitals />
         </Column>
       </Providers>
     </Flex>
