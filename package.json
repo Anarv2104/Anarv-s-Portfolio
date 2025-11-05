@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--max-old-space-size=4096 --no-warnings' next dev --turbo",
     "export": "next export",
-    "build": "NODE_OPTIONS='--max-old-space-size=4096' next build && next export",
+    "build": "next build",
     "build:analyze": "ANALYZE=true NODE_OPTIONS='--max-old-space-size=4096' next build",
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
@@ -22,12 +22,11 @@
     "lint-staged": "^16.1.5",
     "next": "^15.3.1",
     "next-mdx-remote": "^5.0.0",
-    "plaiceholder": "^3.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-icons": "^5.5.0",
     "sass": "^1.86.3",
-    "sharp": "^0.34.4",
+    "sharp": "0.33.4",
     "transliteration": "^2.3.5",
     "web-vitals": "^5.1.0"
   },
@@ -40,5 +39,15 @@
     "eslint": "^9.25.0",
     "typescript": "^5.8.3",
     "tzdata": "^1.0.44"
+  },
+  "overrides": {
+    "sharp": "0.33.4"
+  },
+  "resolutions": {
+    "sharp": "0.33.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
