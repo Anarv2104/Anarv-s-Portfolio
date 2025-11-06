@@ -36,7 +36,7 @@ const nextConfig = {
     },
   },
   
-  // Deployment-optimized image configuration 
+  // Deployment-optimized image configuration with cross-browser compatibility
   images: {
     remotePatterns: [
       {
@@ -46,7 +46,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "images.unsplash.com", 
         pathname: "**",
       },
       {
@@ -65,18 +65,16 @@ const nextConfig = {
         pathname: "**",
       },
     ],
-    // Modern image formats - Next.js will automatically fallback to JPEG
+    // Enable modern formats but ensure JPEG fallback works across all browsers
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days for better deployment compatibility
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days for stable deployment
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Enable optimization for deployment
+    // Ensure optimization works properly on Vercel
     unoptimized: false,
     loader: 'default',
-    // Deployment-ready image handling
-    domains: [], // Add any external domains if needed
   },
   
   // SASS optimization

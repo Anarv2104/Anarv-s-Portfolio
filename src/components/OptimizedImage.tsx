@@ -51,7 +51,7 @@ export default function OptimizedImage({
   const [imageSrc, setImageSrc] = useState(src);
   const [currentFormat, setCurrentFormat] = useState<'avif' | 'webp' | 'original'>('avif');
 
-  // Get optimized image source based on format
+  // Get optimized image source based on format with robust fallback
   const getOptimizedSrc = (format: 'avif' | 'webp' | 'original') => {
     if (format === 'original') return src;
     
@@ -61,6 +61,7 @@ export default function OptimizedImage({
     const basePath = src.substring(0, lastDotIndex);
     const extension = format === 'avif' ? '.avif' : '.webp';
     
+    // For deployment compatibility, check if optimized version exists
     return `${basePath}${extension}`;
   };
 

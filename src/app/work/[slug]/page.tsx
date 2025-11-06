@@ -17,7 +17,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
-import { ScrollToHash, CustomMDX } from "@/components";
+import { ScrollToHash, CustomMDX, DeploymentImage } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
@@ -123,7 +123,20 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        <DeploymentImage 
+          src={post.metadata.images[0]} 
+          alt="Project showcase image"
+          width={960}
+          height={540}
+          priority={true}
+          style={{
+            borderRadius: '8px',
+            objectFit: 'cover',
+            width: '100%',
+            height: 'auto',
+            aspectRatio: '16 / 9'
+          }}
+        />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />

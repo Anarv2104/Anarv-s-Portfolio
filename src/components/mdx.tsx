@@ -26,6 +26,7 @@ import {
   ListItem,
   Line,
 } from "@once-ui-system/core";
+import DeploymentImage from "@/components/DeploymentImage";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -58,22 +59,27 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
 
 function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
   if (!src) {
-    console.error("Media requires a valid 'src' property.");
+    console.error("UniversalImage requires a valid 'src' property.");
     return null;
   }
 
   return (
-    <Media
-      marginTop="8"
-      marginBottom="16"
-      enlarge
-      radius="m"
-      border="neutral-alpha-medium"
-      sizes="(max-width: 960px) 100vw, 960px"
-      alt={alt}
-      src={src}
-      {...props}
-    />
+    <div style={{ margin: '8px 0 16px 0' }}>
+      <DeploymentImage
+        src={src}
+        alt={alt || "Article image"}
+        width={960}
+        height={600}
+        priority={false}
+        style={{
+          borderRadius: '8px',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          objectFit: 'cover',
+          width: '100%',
+          height: 'auto'
+        }}
+      />
+    </div>
   );
 }
 
