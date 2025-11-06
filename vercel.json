@@ -1,13 +1,8 @@
 {
-  "buildCommand": "npm run build",
   "framework": "nextjs",
   "installCommand": "npm install --force",
-  "outputDirectory": ".next",
   "functions": {
-    "pages/api/**/*.ts": {
-      "maxDuration": 30
-    },
-    "pages/api/**/*.js": {
+    "app/api/**/*.ts": {
       "maxDuration": 30
     }
   },
@@ -17,37 +12,16 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, s-maxage=31536000, immutable"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
     {
-      "source": "/(.*\\.(avif|webp|jpg|jpeg|png|gif))",
+      "source": "/(.*\\.(avif|webp|jpg|jpeg|png|gif|svg))",
       "headers": [
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, s-maxage=31536000, immutable"
-        },
-        {
-          "key": "Content-Encoding",
-          "value": "gzip, br"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding, Accept"
-        }
-      ]
-    },
-    {
-      "source": "/_next/image(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, s-maxage=31536000, immutable"
+          "key": "Cache-Control", 
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -60,15 +34,5 @@
         }
       ]
     }
-  ],
-  "env": {
-    "NODE_OPTIONS": "--max-old-space-size=4096",
-    "NEXT_SHARP": "1"
-  },
-  "build": {
-    "env": {
-      "NODE_OPTIONS": "--max-old-space-size=4096",
-      "NEXT_SHARP": "1"
-    }
-  }
+  ]
 }
