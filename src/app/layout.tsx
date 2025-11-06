@@ -63,10 +63,14 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
         
-        {/* Critical image preloading with highest priority */}
+        {/* Critical image preloading with modern formats and highest priority */}
+        <link rel="preload" href="/images/avatar.avif" as="image" type="image/avif" fetchPriority="high" />
+        <link rel="preload" href="/images/avatar.webp" as="image" type="image/webp" fetchPriority="high" />
         <link rel="preload" href="/images/avatar.jpg" as="image" type="image/jpeg" fetchPriority="high" />
-        <link rel="preload" href="/images/teammates/prayers.jpg" as="image" type="image/jpeg" fetchPriority="high" />
-        <link rel="preload" href="/images/teammates/priyank.jpg" as="image" type="image/jpeg" fetchPriority="high" />
+        <link rel="preload" href="/images/teammates/prayers.avif" as="image" type="image/avif" fetchPriority="high" />
+        <link rel="preload" href="/images/teammates/prayers.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="preload" href="/images/teammates/priyank.avif" as="image" type="image/avif" fetchPriority="high" />
+        <link rel="preload" href="/images/teammates/priyank.webp" as="image" type="image/webp" fetchPriority="high" />
         
         {/* Preload critical CSS and fonts */}
         <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
@@ -199,8 +203,14 @@ export default async function RootLayout({
             <WebVitals />
             <ImagePreloader
               images={[
+                '/images/avatar.avif',
+                '/images/avatar.webp', 
                 '/images/avatar.jpg',
+                '/images/teammates/prayers.avif',
+                '/images/teammates/prayers.webp',
                 '/images/teammates/prayers.jpg',
+                '/images/teammates/priyank.avif',
+                '/images/teammates/priyank.webp',
                 '/images/teammates/priyank.jpg',
               ]}
               priority={true}

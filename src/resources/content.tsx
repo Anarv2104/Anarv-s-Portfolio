@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Vasavada",
   name: `Anarv Vasavada`,
   role: "AI Research & Full Stack Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.jpg", // OptimizedImage component will handle AVIF/WebP fallbacks
   email: "anarv.work@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   locationDisplay: "Asia/India",

@@ -2,10 +2,16 @@
 const CACHE_NAME = 'portfolio-images-v1';
 const IMAGE_CACHE_NAME = 'portfolio-images-cache-v1';
 
-// Images to cache immediately
+// Images to cache immediately (modern formats first)
 const CRITICAL_IMAGES = [
+  '/images/avatar.avif',
+  '/images/avatar.webp',
   '/images/avatar.jpg',
+  '/images/teammates/prayers.avif',
+  '/images/teammates/prayers.webp',
   '/images/teammates/prayers.jpg',
+  '/images/teammates/priyank.avif',
+  '/images/teammates/priyank.webp',
   '/images/teammates/priyank.jpg',
 ];
 

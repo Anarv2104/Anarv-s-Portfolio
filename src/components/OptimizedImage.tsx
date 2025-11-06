@@ -49,15 +49,39 @@ export default function OptimizedImage({
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [imageSrc, setImageSrc] = useState(src);
+  const [currentFormat, setCurrentFormat] = useState<'avif' | 'webp' | 'original'>('avif');
 
-  // Preload critical images
+  // Get optimized image source based on format
+  const getOptimizedSrc = (format: 'avif' | 'webp' | 'original') => {
+    if (format === 'original') return src;
+    
+    const lastDotIndex = src.lastIndexOf('.');
+    if (lastDotIndex === -1) return src;
+    
+    const basePath = src.substring(0, lastDotIndex);
+    const extension = format === 'avif' ? '.avif' : '.webp';
+    
+    return `${basePath}${extension}`;
+  };
+
+  // Update imageSrc when format changes
+  useEffect(() => {
+    setImageSrc(getOptimizedSrc(currentFormat));
+  }, [currentFormat, src]);
+
+  // Preload critical images with modern formats
   useEffect(() => {
     if (preload || priority) {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = src;
-      document.head.appendChild(link);
+      // Preload AVIF first, then WebP, then original
+      ['avif', 'webp', 'original'].forEach((format, index) => {
+        setTimeout(() => {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'image';
+          link.href = getOptimizedSrc(format as any);
+          document.head.appendChild(link);
+        }, index * 100); // Stagger preloads
+      });
     }
   }, [src, preload, priority]);
 
@@ -84,8 +108,14 @@ export default function OptimizedImage({
         sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
         onLoad={() => setIsLoaded(true)}
         onError={() => {
-          // Fallback to a default image or retry
-          console.warn(`Failed to load image: ${src}`);
+          // Try fallback formats: AVIF → WebP → Original
+          if (currentFormat === 'avif') {
+            setCurrentFormat('webp');
+          } else if (currentFormat === 'webp') {
+            setCurrentFormat('original');
+          } else {
+            console.warn(`Failed to load image: ${src}`);
+          }
         }}
         style={{
           width: '100%',
