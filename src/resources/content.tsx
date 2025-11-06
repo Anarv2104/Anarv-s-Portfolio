@@ -51,10 +51,10 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/og/anarv-og.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  title: "Anarv Vasavada – AI Research & Full Stack Engineer",
+  description: "Building production-grade AI systems, full-stack platforms, and autonomous intelligence.",
   headline: <>Built to question everything <br />and rebuild what breaks.</>,
   featured: {
     display: true,
