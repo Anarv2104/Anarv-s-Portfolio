@@ -24,13 +24,33 @@ import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resou
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return Meta.generate({
+  return {
     title: home.title,
     description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
+    openGraph: {
+      title: home.title,
+      description: home.description,
+      url: baseURL,
+      siteName: `${person.name}'s Portfolio`,
+      images: [
+        {
+          url: `${baseURL}${home.image}`,
+          width: 1200,
+          height: 630,
+          alt: home.title,
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: home.title,
+      description: home.description,
+      images: [`${baseURL}${home.image}`],
+    },
+    metadataBase: new URL(baseURL),
+  };
 }
 
 export default async function RootLayout({
