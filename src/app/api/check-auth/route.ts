@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
 
+// Removed edge runtime - using standard Node.js runtime for auth checking
+
 export async function GET(request: NextRequest) {
   const cookieHeader = request.headers.get("cookie") || "";
   const cookies = cookie.parse(cookieHeader);

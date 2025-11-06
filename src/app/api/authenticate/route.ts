@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
 
+// Removed edge runtime - using standard Node.js runtime for simpler authentication
+
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const { password } = body;

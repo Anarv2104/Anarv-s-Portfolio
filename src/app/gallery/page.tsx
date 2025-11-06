@@ -2,6 +2,10 @@ import { Flex, Meta, Schema } from "@once-ui-system/core";
 import GalleryView from "@/components/gallery/GalleryView";
 import { baseURL, gallery, person } from "@/resources";
 
+// Force static generation for SEO and performance
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export async function generateMetadata() {
   return Meta.generate({
     title: gallery.title,

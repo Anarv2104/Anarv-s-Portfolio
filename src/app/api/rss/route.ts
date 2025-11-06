@@ -2,6 +2,10 @@ import { getPosts } from "@/utils/utils";
 import { baseURL, blog, person } from "@/resources";
 import { NextResponse } from "next/server";
 
+// Force static generation for RSS feed performance
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export async function GET() {
   const posts = getPosts(["src", "app", "blog", "posts"]);
 

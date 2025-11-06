@@ -17,6 +17,9 @@ import { Footer, Header, RouteGuard, Providers, WebVitals } from "@/components";
 import ImagePreloader from "@/components/ImagePreloader";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
+import HydrationSafeBody from "@/components/HydrationSafeBody";
+import NoSSR from "@/components/NoSSR";
+import HydrationCleaner from "@/components/HydrationCleaner";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 import { Metadata } from "next";
 
@@ -49,18 +52,25 @@ export default async function RootLayout({
       )}
     >
       <head>
-        {/* DNS prefetch for faster external resource loading */}
+        {/* Ultra-aggressive DNS prefetch for faster loading */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
         <link rel="dns-prefetch" href="//images.unsplash.com" />
+        <link rel="dns-prefetch" href="//vercel.app" />
         
         {/* Preconnect for critical external resources */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
         
-        {/* Critical resource hints */}
-        <link rel="preload" href="/images/avatar.jpg" as="image" type="image/jpeg" />
-        <link rel="prefetch" href="/images/teammates/prayers.jpg" as="image" />
-        <link rel="prefetch" href="/images/teammates/priyank.jpg" as="image" />
+        {/* Critical image preloading with highest priority */}
+        <link rel="preload" href="/images/avatar.jpg" as="image" type="image/jpeg" fetchPriority="high" />
+        <link rel="preload" href="/images/teammates/prayers.jpg" as="image" type="image/jpeg" fetchPriority="high" />
+        <link rel="preload" href="/images/teammates/priyank.jpg" as="image" type="image/jpeg" fetchPriority="high" />
+        
+        {/* Preload critical CSS and fonts */}
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+        <link rel="preload" href="/_next/static/chunks/main.js" as="script" />
         
         <script
           id="theme-init"
@@ -111,6 +121,19 @@ export default async function RootLayout({
                       root.setAttribute('data-' + key, value);
                     }
                   });
+                  
+                  // Remove browser extension attributes to prevent hydration mismatch
+                  setTimeout(() => {
+                    const body = document.body;
+                    if (body) {
+                      body.removeAttribute('data-new-gr-c-s-check-loaded');
+                      body.removeAttribute('data-gr-ext-installed');
+                      body.removeAttribute('data-new-gr-c-s-loaded');
+                      body.removeAttribute('data-gramm');
+                      body.removeAttribute('data-lt-tmp-id');
+                      body.removeAttribute('spellcheck');
+                    }
+                  }, 0);
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
                   document.documentElement.setAttribute('data-theme', 'dark');
@@ -121,15 +144,7 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
-        <Column
-          as="body"
-          background="page"
-          fillWidth
-          style={{ minHeight: "100vh" }}
-          margin="0"
-          padding="0"
-          horizontal="center"
-        >
+        <HydrationSafeBody>
           <RevealFx fill position="absolute">
             <Background
               mask={{
@@ -180,18 +195,22 @@ export default async function RootLayout({
             </Flex>
           </Flex>
           <Footer />
-          <WebVitals />
-          <ImagePreloader
-            images={[
-              '/images/avatar.jpg',
-              '/images/teammates/prayers.jpg',
-              '/images/teammates/priyank.jpg',
-            ]}
-            priority={true}
-          />
-          <PerformanceOptimizer />
-          <ServiceWorkerRegistration />
-        </Column>
+          <NoSSR>
+            <WebVitals />
+            <ImagePreloader
+              images={[
+                '/images/avatar.jpg',
+                '/images/teammates/prayers.jpg',
+                '/images/teammates/priyank.jpg',
+              ]}
+              priority={true}
+              aggressive={true}
+            />
+            <PerformanceOptimizer />
+            <ServiceWorkerRegistration />
+            <HydrationCleaner />
+          </NoSSR>
+        </HydrationSafeBody>
       </Providers>
     </Flex>
   );

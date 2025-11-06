@@ -2,6 +2,10 @@ import { Column, Heading, Meta, Schema, SmartLink, Text, Flex } from "@once-ui-s
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 
+// Force static generation for maximum performance
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
